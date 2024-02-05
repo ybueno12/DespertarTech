@@ -1,0 +1,22 @@
+void main() {
+  List<String> produtos = ["Arroz", "Feijão", "Leite", "Batata", "Açúcar", "Óleo", "Macarrão"];
+  List<double> precos = [21.9, 8.5, 4.19, 4.99, 2.99, 6.49, 3.25];
+  List<int> quantidades = [2, 4, 12, 3, 5, 6, 8];
+
+  double total = 0.0;
+
+  for (int i = 0; i < produtos.length; i++) {
+    String produto = produtos[i];
+    double preco = precos[i];
+    int quantidade = quantidades[i];
+    double subtotal = preco * quantidade;
+
+    print(produto);
+    print("PREÇO = R\$$preco X $quantidade");
+    print("    R\$${subtotal.toStringAsFixed(2)}\n");
+
+    total += subtotal;
+  }
+
+  print("VALOR TOTAL = R\$${total.toStringAsFixed(2)}");
+}
