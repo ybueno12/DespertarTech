@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <linkhref"https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="recursos\estilo.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1>curso php</h1>
+        <h2>exercicios</h2>
+    </header>
+    <main class="principal">
+        <div class = "conteudo">
+            <nav  class= "modulos">
+                <div class = "modulo">
+                    <h3> modulo 1 - basico </h3>
+                    <ul>
+                        <ul>
+                            <li><a href="#">exercicio a </a></li>
+                            <li><a href="#">exercicio b </a></li>
+                            <li><a href="#">exercicio c </a></li>
+                            <li><a href="#">exercicio d </a></li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class = "modulo">
+                    <h3> modulo 2 - basico </h3>
+                    <ul>
+                        <ul>
+                            <li><a href="#">exercicio a </a></li>
+                            <li><a href="#">exercicio b </a></li>
+                            <li><a href="#">exercicio c </a></li>
+                            <li><a href="#">exercicio d </a></li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class = "modulo">
+                    <h3> modulo 3 - basico </h3>
+                    <ul>
+                        <ul>
+                            <li><a href="#">exercicio a </a></li>
+                            <li><a href="#">exercicio b </a></li>
+                            <li><a href="#">exercicio c </a></li>
+                            <li><a href="#">exercicio d </a></li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class = "modulo">
+                    <h3> modulo 4 - basico </h3>
+                    <ul>
+                        <ul>
+                            <li><a href="#">exercicio a </a></li>
+                            <li><a href="#">exercicio b </a></li>
+                            <li><a href="#">exercicio c </a></li>
+                            <li><a href="#">exercicio d </a></li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class = "modulo">
+                    <h3> modulo 5 - basico </h3>
+                    <ul>
+                        <ul>
+                            <li><a href="#">exercicio a </a></li>
+                            <li><a href="#">exercicio b </a></li>
+                            <li><a href="#">exercicio c </a></li>
+                            <li><a href="#">exercicio d </a></li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class = "modulo">
+                    <h3> modulo 6 - basico </h3>
+                    <ul>
+                        <ul>
+                            <li><a href="#">exercicio a </a></li>
+                            <li><a href="#">exercicio b </a></li>
+                            <li><a href="#">exercicio c </a></li>
+                            <li><a href="#">exercicio d </a></li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class = "modulo">
+                    <h3> modulo 7 - basico </h3>
+                    <ul>
+                        <ul>
+                            <li><a href="#">exercicio a </a></li>
+                            <li><a href="#">exercicio b </a></li>
+                            <li><a href="#">exercicio c </a></li>
+                            <li><a href="#">exercicio d </a></li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class = "modulo">
+                    <h3> modulo 8 - basico </h3>
+                    <ul>
+                        <ul>
+                            <li><a href="#">exercicio a </a></li>
+                            <li><a href="#">exercicio b </a></li>
+                            <li><a href="#">exercicio c </a></li>
+                            <li><a href="#">exercicio d </a></li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class = "modulo">
+                    <h3> modulo 9 - basico </h3>
+                    <ul>
+                        <ul>
+                            <li><a href="#">exercicio a </a></li>
+                            <li><a href="#">exercicio b </a></li>
+                            <li><a href="#">exercicio c </a></li>
+                            <li><a href="#">exercicio d </a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </main>
+    <footer class="rodape">
+        Dtec cusro php 2024
+    </footer>
+</body>
+</html>
+
+  css
+  *{
+    font-family: "Oswald" sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    heigth: 100vh;
+    margin: 0px;
+    display: grid;
+    grid-template-rows: 120px 1fr 60px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "cabecalho" "principal" "rodape";
+}
+
+.cabecalho {
+    grid-area: cabecalho;
+    background-color: rgb(255, 0, 0);
+    color:blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.cabecalho >h1 {
+    margin: 0px;
+    font-weight: 300;
+    font-size: 1.6rem;
+}
+
+.cabecalho >h2 {
+    margin: 0px;
+    font-weight: 200;
+    font-size: 1.6rem
+    ;
+}
+
+.principal {
+    grid-area: principal;
+    height: calc(100vh - 100px);
+    background-color: aliceblue;
+    padding: 20px;
+}
+
+.conteudo{
+    position: relative;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: aliceblue;
+    padding: 20px;
+    box-shadow: 0px 0px 25px 0px black ;
+}
+
+.rodape {
+    grid-area: rodape;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.2rem;
+    padding-right: 20px;
+    color:black;
+}
+
+.modulos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.modulo {
+    flex-basis: 32%;
+}
+
+.modulo > h3 {
+    margin: 0px;
+    color: aliceblue;
+    font-weight: 300;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    background: #1867c0;
+}
