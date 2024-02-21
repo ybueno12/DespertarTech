@@ -1,0 +1,41 @@
+import "dart:io";
+
+void main() {
+  stdout.write("""Escolha a forma:
+                1.desenhar quadrado
+                2.desenhar triangulo
+                3.desenhar linha
+                4.sair  do programa """);
+  var desenho = stdin.readLineSync()!;
+
+switch(desenho){
+  case "4":
+   print("fechando programa");
+   return;
+  case "3":
+  linha();
+  break;
+  case "2":
+  triangulo();
+  break;
+  case "1":
+  quadrado();
+  break;
+}
+}
+
+void quadrado(){
+ print("""          -----
+          |   |
+          -----""");
+}
+
+void triangulo(){
+  print("""    **
+   ****
+  ******""");
+}
+
+void linha(){
+  print("--------");
+}
