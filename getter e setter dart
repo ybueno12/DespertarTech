@@ -1,0 +1,86 @@
+treino de getter e setter com class
+
+// Classe Pessoa
+void main(){
+  
+}
+class Pessoa {
+  String _nome = "";
+  String _endereco = "";
+
+  Pessoa(String nome, String endereco) {
+    _nome = nome;
+    _endereco = endereco;
+  }
+
+  String get nome => _nome;
+  set nome(String nome) => _nome = nome;
+
+  String getNome() {
+    return _nome;
+  }
+
+  void setNome(String nome) {
+    _nome = nome;
+  }
+
+  String get endereco => _endereco;
+  set endereco(String endereco) => _endereco = endereco;
+
+  String getEndereco() {
+    return _endereco;
+  }
+
+  void setEndereco(String endereco) {
+    _endereco = endereco;
+  }
+}
+
+PESSOAFISICA.DART
+import 'pessoa.dart';
+
+class PessoaFisica extends Pessoa {
+String _cpf = "";
+
+PessoaFisica(String nome, String endereco, String cpf)
+   : super(nome, endereco) {
+   _cpf = cpf;
+}
+
+String get cpf => cpf;
+set cpf(String cpf) => _cpf = cpf ;
+
+  String getNome() {
+    return _cpf;
+  }
+}
+
+PESSOAJURIDICA.DART
+import 'pessoa.dart';
+
+class PessoaJuridica extends Pessoa{
+  String _cnpj = "";
+
+  PessoaJuridica(String nome, String endereco, String cnpj)
+   : super(nome, endereco) {
+   _cnpj = cnpj;
+   }
+
+String get cnpj => cnpj;
+set cnpj(String cnpj) => _cnpj = cnpj ;  
+
+  String getNome() {
+    return _cnpj;
+  }
+}  
+
+PROGRAMAPESSOA.DART
+import"pessoa.dart";
+import"pessoafisica.dart";
+import"pessoajuridica.dart";
+
+void main(){
+  Pessoa pessoa1 = Pessoa("vander", "rua1");
+  PessoaFisica pf1 = PessoaFisica("joão", "rua2", "9990840989");
+  PessoaJuridica pfj = PessoaJuridica("maria", "rua3", "435452244");
+}
