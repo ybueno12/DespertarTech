@@ -1,0 +1,120 @@
+jogo no dart
+abrir uma pasta chamada jogo e nela criar um arquivo chamado  de pessoa e colocar isso 
+
+class Personagem {
+  String nome;
+  int vida;
+  int ataque;
+  int defesa;
+  int poder;
+
+  Personagem(this.nome, this.vida, this.ataque, this.defesa, this.poder);
+
+  void atacar(Personagem alvo, {bool especial = false}){
+    int dano; 
+
+    if(especial){
+      if(poder >=10){
+        dano = ataque *2 - alvo.defesa;
+        poder -= 10;
+        print("${alvo.nome} uusou ataque especial contra ${alvo.nome}"); 
+      } else {
+        print("você não tem pontos para usar o  ataque especial");
+        dano = 0;
+      }
+    } else {
+      dano = ataque - defesa;
+      print("$nome atacou ${alvo.nome}");
+      print("causou $dano de dano");
+    }
+    alvo.vida -= dano;
+  }
+}           
+
+agora criar um arquivo chamado main e colocar esse
+
+import "dart:math";
+import "dart:io";
+import "personagem.dart";
+
+void main () {
+  bool jogarNovamente = true;
+
+  while(jogarNovamente) {
+    print("bem vindo! escolha uma opção");
+    print("1.jogar");
+    print("2.sair");
+
+    int opcao = int.parse(stdin.readLineSync()!);
+
+    switch (opcao) {
+      case 1:
+      jogar();
+      break;
+    case 2:
+      jogarNovamente = false;
+      break;
+    default:
+      print("opção invalida");
+    }
+  }
+
+  print("obrigado por jogar");
+}
+
+void jogar() {
+  List<Personagem> personagens= [
+    Personagem("zelda", 150, 22, 12, 8),
+    Personagem("link", 200, 20, 18, 10),
+    Personagem("deku scrub", 50, 12, 8, 6)
+  ];
+
+  Random random = Random();
+  Personagem computador = personagens[random.nextInt(personagens.length)]; 
+
+  print("escolha seu personagem");
+  for (int i = 0; i < personagens.length; i++) {
+    print("${i + 1} ${personagens[i].nome}");
+  }
+
+  int escolha = int.parse(stdin.readLineSync()!);
+  Personagem  jogador = personagens[escolha - 1];
+
+  print("voce escolheu ${jogador.nome}");
+  print("você irá  lutar com ${computador.nome}");
+  
+  while (jogador.vida > 0 && computador.vida > 0){
+    print("pressione enter parar continuar");
+    stdin.readLineSync();
+    print('\x1B[2J\x1B[0;0H');
+  }
+
+print("escolha o que fazer");
+print("1.atacar");
+print("2.especial");
+print("3.sair");
+ 
+ int ataqueEscolhido = int.parse(stdin.readLineSync()!);
+
+ switch (ataqueEscolhido){
+  case 1:
+  jogador.atacar(computador);
+  break;
+  case 2:
+  jogador.atacar(computador, especial: true);
+  break;
+ } 
+
+void jogar (){
+  if (computador.vida <= 0) {
+    print("vc derrotou ${computador.nome}");
+    break:
+  }
+
+  print("\npressione enter para continuar");
+  stdin.readLineSync();
+  print('\x1B[2J\x1B[0;0H');
+
+  print("vida restante do ${computador.nome} : ${computador.vida}");
+ }
+}
